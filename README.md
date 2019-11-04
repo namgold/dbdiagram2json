@@ -28,7 +28,7 @@ Table Item {
   NAME              NVARCHAR(100)   [not null]
 }
 ```
-![dbdiagram](doc/dbdiagram.png)
+<img src="./doc/dbdiagram.png" width="500"/>
 
 Will generate folowing **`dbdiagram.json`**:
 ```json

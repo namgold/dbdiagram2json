@@ -4,3 +4,10 @@ dbdiagram.input
 dbdiagram.json
 
 .vscode/
+
+**/__pycache__
+
+build/
+
+dist/
+

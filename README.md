@@ -8,7 +8,7 @@ This tool is used for export .json file from [https://dbdiagram.io](https://dbdi
    > python main.py
  3. Output has been generated to *dbdiagram.json*
 ### Example
-In file  **`dbdiagram.input`**:
+In file  <a href = "https://dbdiagram.io/d/5dc03424edf08a25543d7cf8">**`dbdiagram.input`**</a>:
 ```
 Table Customer as cus {
   ID                CHAR(10)        [primary key, increment]

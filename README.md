@@ -28,7 +28,7 @@ Table Item {
   NAME              NVARCHAR(100)   [not null]
 }
 ```
-![](doc\dbdiagram.png)
+![dbdiagram](doc\dbdiagram.png)
 
 Will generate folowing **`dbdiagram.json`**:
 ```json

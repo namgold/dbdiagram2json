@@ -11,10 +11,10 @@ def buildFieldOption(optionString):
     options = {
     #    "ref":         None,
     #    "default" :    None,
-    #    "increment":   None,
-    #    "nullable":    None,
-    #    "primary key": None,
-    #    "unique":      None,
+    #    "increment":   False,
+    #    "nullable":    True,
+    #    "primary key": False,
+    #    "unique":      False,
     #    "note":        None
     }
     optionString = optionString.replace('\n', ' ').strip().split(',')

@@ -1,6 +1,6 @@
 # dbdiagram2json
 ## Description
-This tool is used for export .json file from [https://dbdiagram.io](https://dbdiagram.io/) diagrams 
+This tool is used for export [https://dbdiagram.io](https://dbdiagram.io/) diagrams to JSON format.
 ## Usage
 
  1. Copy diagrams from [https://dbdiagram.io](https://dbdiagram.io/) to *dbdiagram.input* file place at the root of project.

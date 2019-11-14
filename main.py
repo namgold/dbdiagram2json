@@ -46,23 +46,22 @@ def buildFieldOption(optionString):
     return options
 
 def buildFields(fieldsString):
-    fields = []
+    fields = {}
     matchesField = re.finditer(regexFields, fieldsString)
     for pi, i in enumerate(matchesField):
         group = i.groups()
-        field = {
+        fields[group[0]] = {
             "name": group[0],
             "type": group[1],
             "options": buildFieldOption(group[2])
         }
-        fields += [field]
     return fields
 
 def buildTableOption(tableOptionString):
     return None
 
 def buildTables(tableString):
-    result = {"Table": []}
+    result = {"Not define": [],"notfound": []}
     matches = re.finditer(regexTables, tableString, re.MULTILINE | re.VERBOSE | re.DOTALL)
     for matchNum, match in enumerate(matches, start=1):
         group = match.groups()
@@ -70,9 +69,15 @@ def buildTables(tableString):
             "name": group[0],
             "shortName": group[1],
             "option": buildTableOption(group[2]),
-            "fields": buildFields(group[3])
+            "fields": buildFields(group[4])
         }
-        result["Table"] += [table]
+        if group[3] is None: 
+            result["Not define"] += [table]
+        else:
+            if group[3] == "notfound":
+                result['notfound'] += [table]
+            else:
+                result[group[3]] = table
     return result
 
 print("Generating")
@@ -85,5 +90,5 @@ tableOutput = json.dumps(tableObject, indent=4)
 
 open(outputPath, 'w').write(tableOutput)
 
-print("\nGenerate succeeded", len(tableObject["Table"]),
+print("\nGenerate succeeded", len(tableObject["Not define"]) + len(tableObject["notfound"]) + len(tableObject) - 2,
       "tables in {0:0.4f} second(s)".format(time.time()-now))

@@ -1,7 +1,7 @@
 import re, time, json
 
-regexTables = r"""[Tt]able[ ]+(?P<TableName>[^\s]+)(?:[ ]+as[ ]+(?P<TableShortName>[^\s]+))?[ ]*(?:\[(?P<TableOption>.*?)\])?[ ]*\{(?P<DeclBody>.*?)\}"""
-regexFields = r"""(?P<FieldName>[^\s]+)[ ]+(?P<FieldType>[^\s]+)(?:[ ]*\[(?P<FieldOption>.*?)\])?[ ]*\n"""
+regexTables = r"""[Tt]able[ ]+(?P<TableName>[^\s]+)(?:[ ]+as[ ]+(?P<TableShortName>[^\s]+))?[ ]*(?:\[(?P<TableOption>.*?)\])?[ ]*\{\s+(?://(?P<ExcelName>[^\s]+))?(?P<DeclBody>.*?)\}"""
+regexFields = r"""\n[ ]*(?P<FieldName>[^\s]+)[ \t]+(?P<FieldType>[^\s]+)(?:[ \t]*\[(?P<FieldOption>.*?)\])?[ ]*"""
 inputPath = "./dbdiagram.input"
 outputPath = "./dbdiagram.json"
 
